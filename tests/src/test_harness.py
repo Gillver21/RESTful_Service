@@ -68,7 +68,7 @@ def main():
 				
 				
 				
-				#Appending the expiration_time to the times2 array which will be used to monitor the expiration period for every associated task added
+				#Appending the expiration_time to the times2 array which will be used to monitor the expiration period for every associated chat added
 				expiration_times_array.append(expiration_time)
 						
 					
@@ -86,7 +86,7 @@ def main():
 						sys.exit('JSON portion of request formatted improperly')
 							
 							
-				#Add formatted chat to unexpired task list
+				#Add formatted chat to unexpired chats list
 				chats.append(add_chat)
 				
 
