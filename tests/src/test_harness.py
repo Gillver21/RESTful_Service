@@ -35,11 +35,7 @@ recur = list(re.findall('([\d]+):([\d]+):([\d]+)', str(datetime.datetime.now())[
 
 def main():
 	try:
-		while recur != []:
-			#Declaring tasks array which contains the data which will be returned
-			#tasks = [{"id": 1,"title":"Buy groceries","description":"Milk, Cheese, Pizza", "done": False}, {"id": 2,"title":"Learn Python","description":"Need to find a good Python tutorial", "done": False}]
-
-			
+		while recur != []:			
 			#Initiating Flask python server instance
 			app = Flask('__main__')
 	
@@ -58,7 +54,7 @@ def main():
 				
 				
 				#If JSON element timeout specified in data passed, set variable timeout_1 equal to that value
-				#Variable timeout_1 to create and expiration time for currently queried chat
+				#Variable timeout_1 to create and expiration time for currently queried chat message
 				try:
 					timeout_1 = int(request.json["timeout"])
 				#If JSON element timeout not found or not parsable, set timeout_1 to integer 60 (although a default value for timeout_1 declared above)
@@ -77,7 +73,7 @@ def main():
 						
 					
 					
-				#Because tasks will move between arrays and should never exist in both simultaneously, declare the variable count which will hold the numerical concurrent ID of each message based on the sum of the total lengths of these two arrays
+				#Because each chat message will move between two arrays and should never exist in both simultaneously, declare the variable count which will hold the numerical concurrent ID of each message based on the sum of the total lengths of [unexpired] chats array and the expired chats array arrays
 				count = len(chats)+len(expired_chats)
 				
 				
@@ -90,7 +86,7 @@ def main():
 						sys.exit('JSON portion of request formatted improperly')
 							
 							
-				#Add formatted task to unexpired task list
+				#Add formatted chat to unexpired task list
 				chats.append(add_chat)
 				
 
