@@ -82,9 +82,9 @@ Navigates to    <directory>/RESTful_Service/CLIENT/DEPENDENCIES/REPLACE_SERVER_I
 Opens the replace_server_ip.sh file
 Finds the line:
 sudo find ../.. -type f -exec sed -i "s/:\*\*\*\*/\[REMOTE_SERVER_IP\]/g" {} +
-And replaces   [REMOTE_SERVER_IP\]  with   the IP address of the   AWS Ubuntu Server
+And replaces   \[REMOTE_SERVER_IP\]  with   the IP address and port number allowed in AWS Security Group for the   AWS Ubuntu Server
 In the case of our example it results in the command:
-sudo find ../.. -type f -exec sed -i "s/:\*\*\*\*/54.84.155.17/g" {} +
+sudo find ../.. -type f -exec sed -i "s/:\*\*\*\*/54.84.155.17:5000/g" {} +
 User runs chmod a+x on  replace_server_ip.sh    using the command:
 chmod a+x replace_server_ip.sh
 User runs  replace_server_ip.sh   using the command
