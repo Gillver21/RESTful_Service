@@ -1,6 +1,6 @@
 #!/bin/bash
 #POST Text 1
-curl -i -H "Content-Type: application/json" -X POST -d '{"text":"Orange Juice", "timeout":170}' http://:*****:****/chat/Becky/meh
+curl -i -H "Content-Type: application/json" -X POST -d '{"text":"Orange Juice", "timeout":170}' http://:*****/chat/Becky/meh
 #Sleep
 sleep 2
 #POST 2ext 2
